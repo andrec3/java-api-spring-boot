@@ -6,17 +6,17 @@ import java.util.List;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.RestController;
 
 import com.cruzandre.forum.model.Curso;
 import com.cruzandre.forum.model.Topico;
 
-@Controller
+@RestController
 public class TopicosController {
 
 	@RequestMapping("/topicos")
-	@ResponseBody
 	public List<Topico> lista() {
-		Topico topico = new Topico("Duvida", "Duvida com Spring", new Curso("Spring", "Programacao"));
+		Topico topico = new Topico("Duvida", "Duvida com Spring", new Curso("Spring", "Programação"));
 		return Arrays.asList(topico, topico, topico);
 	}
 }
